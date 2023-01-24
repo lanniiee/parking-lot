@@ -27,11 +27,4 @@ public class Car extends Vehicle {
 
     }
 
-    @Override
-    public void leave(ParkingLot parkingLot) {
-        if (!parkingLot.isEmpty()) {
-            parkingLot.setNumOfAvailableSpots(parkingLot.getNumOfAvailableSpots()+1);
-        }
-
-    }
 }

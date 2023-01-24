@@ -25,10 +25,5 @@ public class Van extends Vehicle {
         }
     }
 
-    public void leave(ParkingLot parkingLot) {
-        if (!parkingLot.isEmpty()) {
-            parkingLot.setNumOfAvailableSpots(parkingLot.getNumOfAvailableSpots() + 3);
-        }
-    }
 
 }

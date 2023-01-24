@@ -23,9 +23,4 @@ public class Motorcycle extends Vehicle {
             System.out.println("There are currently " + parkingLot.getNumOfAvailableSpots() + " spots left.");
     }
 
-    public void leave(ParkingLot parkingLot) {
-        if (!parkingLot.isEmpty()) {
-            parkingLot.setNumOfAvailableSpots(parkingLot.getNumOfAvailableSpots() + 1);
-        }
-    }
 }
