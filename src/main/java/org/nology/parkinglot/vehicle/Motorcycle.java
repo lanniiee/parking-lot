@@ -24,7 +24,7 @@ public class Motorcycle extends Vehicle {
     }
 
     public void leave(ParkingLot parkingLot) {
-        if (parkingLot.isEmpty() == false) {
+        if (!parkingLot.isEmpty()) {
             parkingLot.setNumOfAvailableSpots(parkingLot.getNumOfAvailableSpots() + 1);
         }
     }

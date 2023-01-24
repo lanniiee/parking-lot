@@ -5,18 +5,16 @@ import org.nology.parkinglot.vehicle.Motorcycle;
 import org.nology.parkinglot.vehicle.Van;
 import org.nology.parkinglot.vehicle.Vehicle;
 
-import java.util.ArrayList;
-import java.util.List;
+
 import java.util.Scanner;
 
 public class Commands {
 
-    private String[] welcomeOpt = {"Check number of available space", "Park vehicle", "Leave"};
-    private String[] parkingOpt = {"Car", "Motorcycle", "Van"};
-    private String[] availabilityOpt = {"Check the number of available parking spot", "Check the total number of parking spot", "Check if parking lot is full", "Check if parking lot is empty", "Check how many compact spots are available","Check how many regular spots are available", "Check how many spots certain vehicles are taking up", "Back"};
-    private ParkingLot parkingLot;
+    private final String[] welcomeOpt = {"Check number of available space", "Park vehicle", "Leave"};
+    private final String[] parkingOpt = {"Car", "Motorcycle", "Van"};
+    private final String[] availabilityOpt = {"Check the number of available parking spot", "Check the total number of parking spot", "Check if parking lot is full", "Check if parking lot is empty", "Check how many compact spots are available","Check how many regular spots are available", "Check how many spots certain vehicles are taking up", "Back"};
+    private final ParkingLot parkingLot;
     private boolean isCheckAvailability;
-    private List<Vehicle> vehiclesCurrentlyParked = new ArrayList<>();
     private boolean running = true;
 
     public Commands (ParkingLot parkingLot) {
@@ -25,10 +23,10 @@ public class Commands {
 
     public void greeting() {
 
-        while (running == true) {
+        while (running) {
             System.out.println("\nWelcome!\n");
             for (int i = 0; i < welcomeOpt.length; i++) {
-                System.out.println(String.format("%d: %s", i+1, welcomeOpt[i]));
+                System.out.printf("%d: %s%n", i+1, welcomeOpt[i]);
             }
             Scanner scanner = new Scanner(System.in);
             int userInput = scanner.nextInt();
@@ -54,9 +52,8 @@ public class Commands {
 
     public void checkAvailability () {
         while (isCheckAvailability) {
-            System.out.println("");
             for (int i = 0; i < availabilityOpt.length; i++) {
-                System.out.println(String.format("%d) %s", i+1, availabilityOpt[i]));
+                System.out.printf("%d) %s%n", i+1, availabilityOpt[i]);
             }
             Scanner scanner = new Scanner(System.in);
             int userInput = scanner.nextInt();
@@ -69,15 +66,14 @@ public class Commands {
                     System.out.println("The total number of parking spot is " + parkingLot.getTotalNumOfParkingSpace());
                     break;
                 case 3:
-                    if (parkingLot.isFull() == true) {
+                    if (parkingLot.isFull()) {
                         System.out.println("This parking lot is full.");
                     } else {
                         System.out.println("This parking lot is not full.");
                     }
                     break;
                 case 4:
-                    parkingLot.isEmpty();
-                    if (parkingLot.isEmpty() == true) {
+                    if (parkingLot.isEmpty()) {
                         System.out.println("This parking lot is empty.");
                     } else {
                         System.out.println("This parking lot is not empty.");
@@ -102,10 +98,10 @@ public class Commands {
     }
 
     public void parkCar () {
-        if (parkingLot.isFull() == false) {
+        if (!parkingLot.isFull()) {
             Scanner scanner = new Scanner(System.in);
             for (int i = 0; i < parkingOpt.length; i++) {
-                System.out.println(String.format("%d. %s", i+1, parkingOpt[i]));
+                System.out.printf("%d. %s%n", i+1, parkingOpt[i]);
             }
             int userInput = scanner.nextInt();
             switch (userInput) {
@@ -144,7 +140,7 @@ public class Commands {
     public void checkCertainVehicleAvailability () {
         System.out.println("\nWhich vehicle would you like to check?\n");
         for (int i = 0; i < parkingOpt.length; i++) {
-            System.out.println(String.format("%d. %s", i+1, parkingOpt[i]));
+            System.out.printf("%d. %s%n", i+1, parkingOpt[i]);
         }
         Scanner scanner = new Scanner(System.in);
         int userInput = scanner.nextInt();

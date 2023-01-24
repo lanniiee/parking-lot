@@ -4,7 +4,7 @@ import org.nology.parkinglot.carpark.ParkingLot;
 
 public class Car extends Vehicle {
 
-    private String size;
+    private final String size;
     private static int numOfCars;
 
     public Car (String size) {
@@ -12,19 +12,11 @@ public class Car extends Vehicle {
         numOfCars++;
     }
 
-    public String getSize() {
-        return size;
-    }
-
-    public void setSize(String size) {
-        this.size = size;
-    }
-
     @Override
     public void park(ParkingLot parkingLot) {
-            if (size == "small") {
+            if (size.equals("small")) {
                 parkingLot.setNumOfCompactSpot(parkingLot.getNumOfCompactSpot()-1);
-            } else if (size == "regular") {
+            } else if (size.equals("regular")) {
                 parkingLot.setNumOfRegularSpot(parkingLot.getNumOfRegularSpot()-1);
             }
             parkingLot.setNumOfAvailableSpots(parkingLot.getNumOfAvailableSpots()-1);
@@ -37,7 +29,7 @@ public class Car extends Vehicle {
 
     @Override
     public void leave(ParkingLot parkingLot) {
-        if (parkingLot.isEmpty() == false) {
+        if (!parkingLot.isEmpty()) {
             parkingLot.setNumOfAvailableSpots(parkingLot.getNumOfAvailableSpots()+1);
         }
 

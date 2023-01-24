@@ -1,11 +1,9 @@
 package org.nology.parkinglot.vehicle;
-
 import org.nology.parkinglot.carpark.ParkingLot;
 
 public class Van extends Vehicle {
 
-    private boolean isParked;
-    private int numOfSpot=3;
+    private final int numOfSpot = 3;
     private static int numOfVan;
     private static int totalVanSpaceOccupied;
 
@@ -28,7 +26,7 @@ public class Van extends Vehicle {
     }
 
     public void leave(ParkingLot parkingLot) {
-        if (parkingLot.isEmpty() == false) {
+        if (!parkingLot.isEmpty()) {
             parkingLot.setNumOfAvailableSpots(parkingLot.getNumOfAvailableSpots() + 3);
         }
     }
