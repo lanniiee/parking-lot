@@ -11,39 +11,45 @@ import java.util.Scanner;
 
 public class Commands {
 
-    private String[] welcomeOpt = {"Check number of available space", "Park car", "Leave"};
+    private String[] welcomeOpt = {"Check number of available space", "Park vehicle", "Leave"};
     private String[] parkingOpt = {"Car", "Motorcycle", "Van"};
-    private String[] availabilityOpt = {"Check the number of available parking spot", "Check the total number of parking spot", "Check if parking lot is full", "Check if parking lot is empty", "Check how many spots vans are taking up", "Exit"};
+    private String[] availabilityOpt = {"Check the number of available parking spot", "Check the total number of parking spot", "Check if parking lot is full", "Check if parking lot is empty", "Check how many compact spots are available","Check how many regular spots are available", "Check how many spots certain vehicles are taking up", "Back"};
     private ParkingLot parkingLot;
     private boolean isCheckAvailability;
     private List<Vehicle> vehiclesCurrentlyParked = new ArrayList<>();
+    private boolean running = true;
 
     public Commands (ParkingLot parkingLot) {
         this.parkingLot = parkingLot;
     }
 
     public void greeting() {
-        System.out.println("Welcome!\n");
-        for (int i = 0; i < welcomeOpt.length; i++) {
-            System.out.println(String.format("%d: %s", i+1, welcomeOpt[i]));
-        }
-        Scanner scanner = new Scanner(System.in);
-        int userInput = scanner.nextInt();
 
-        switch (userInput) {
-            case 1:
-                isCheckAvailability = true;
-                checkAvailability();
-                break;
-            case 2:
-                parkCar();
-                break;
-            case 3:
-                leaveCarPark();
-                break;
-            default:
-                System.out.println("Invalid input. Goodbye!");
+        while (running == true) {
+            System.out.println("\nWelcome!\n");
+            for (int i = 0; i < welcomeOpt.length; i++) {
+                System.out.println(String.format("%d: %s", i+1, welcomeOpt[i]));
+            }
+            Scanner scanner = new Scanner(System.in);
+            int userInput = scanner.nextInt();
+
+            switch (userInput) {
+                case 1:
+                    isCheckAvailability = true;
+                    checkAvailability();
+                    break;
+                case 2:
+                    parkCar();
+                    break;
+                case 3:
+                    leaveCarPark();
+                    break;
+                default:
+                    running = false;
+                    System.out.println("Invalid input. Goodbye!");
+            }
         }
+
     }
 
     public void checkAvailability () {
@@ -78,11 +84,16 @@ public class Commands {
                     }
                     break;
                 case 5:
-                    System.out.println("Vans are currently taking up " + parkingLot.getNumOfSpotVanOccupied() +" spots.");
+                    System.out.println("There are currently " + parkingLot.getNumOfCompactSpot() + " compact spots available.");
                     break;
                 case 6:
+                    System.out.println("There are currently " + parkingLot.getNumOfRegularSpot() + " regular spots available.");
+                    break;
+                case 7:
+                    checkCertainVehicleAvailability();
+                    break;
+                case 8:
                     isCheckAvailability = false;
-                    System.out.println("GoodBye!");
                     break;
                 default:
                     System.out.println("Invalid input. E.g. Input 1 for number of available parking spot.");
@@ -91,40 +102,67 @@ public class Commands {
     }
 
     public void parkCar () {
-        Scanner scanner = new Scanner(System.in);
-        for (int i = 0; i < parkingOpt.length; i++) {
-            System.out.println(String.format("%d. %s", i+1, parkingOpt[i]));
+        if (parkingLot.isFull() == false) {
+            Scanner scanner = new Scanner(System.in);
+            for (int i = 0; i < parkingOpt.length; i++) {
+                System.out.println(String.format("%d. %s", i+1, parkingOpt[i]));
+            }
+            int userInput = scanner.nextInt();
+            switch (userInput) {
+                case 1:
+                    System.out.println("Is your car small or regular? Type '1' for Small or '2' for regular");
+                    userInput = scanner.nextInt();
+                    String size = "regular";
+                    if (userInput == 1) {
+                        size = "small";
+                        Vehicle car = new Car(size);
+                        car.park(parkingLot);
+                    } else if (userInput == 2) {
+                        Vehicle car = new Car(size);
+                        car.park(parkingLot);
+                    } else {
+                        System.out.println("incorrect input");
+                    }
+                    break;
+                case 2:
+                    Vehicle motorCycle = new Motorcycle();
+                    motorCycle.park(parkingLot);
+                    break;
+                case 3:
+                    Vehicle van = new Van();
+                    van.park(parkingLot);
+            }
         }
-        int userInput = scanner.nextInt();
-        switch (userInput) {
-            case 1:
-                System.out.println("Is your car small or regular? Type '1' for Small or '2' for regular");
-                userInput = scanner.nextInt();
-                String size = "regular";
-                if (userInput == 1) {
-                    size = "small";
-                    Vehicle car = new Car(size);
-                    car.park(parkingLot);
-                } else if (userInput == 2) {
-                    size = "regular";
-                    Vehicle car = new Car(size);
-                    car.park(parkingLot);
-                } else {
-                    System.out.println("incorrect input");
-                }
-                break;
-            case 2:
-                Vehicle motorCycle = new Motorcycle();
-                motorCycle.park(parkingLot);
-                break;
-            case 3:
-                Vehicle van = new Van();
-                van.park(parkingLot);
-        }
+
     }
 
     public void leaveCarPark () {
+        running = false;
         System.out.println("Goodbye!");
+    }
+
+    public void checkCertainVehicleAvailability () {
+        System.out.println("\nWhich vehicle would you like to check?\n");
+        for (int i = 0; i < parkingOpt.length; i++) {
+            System.out.println(String.format("%d. %s", i+1, parkingOpt[i]));
+        }
+        Scanner scanner = new Scanner(System.in);
+        int userInput = scanner.nextInt();
+
+        switch (userInput) {
+            case 1:
+                System.out.println("Cars are currently taking up " + parkingLot.getNumOfSpotCarOccupied() + " spots in this parking lot.");
+                break;
+            case 2:
+                System.out.println("Motorcycles are currently taking up " + parkingLot.getNumOfSpotMotorcycleOccupied() + " spots in this parking lot.");
+                break;
+            case 3:
+                System.out.println("Vans are currently taking up " + parkingLot.getNumOfSpotVanOccupied() + " spots in this parking lot.");
+                break;
+            default:
+                System.out.println("Invalid input");
+        }
+
     }
 
 }

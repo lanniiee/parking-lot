@@ -4,21 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1c3f7a0-482a-4380-ac61-2db0e398e047" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nology/parkinglot/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nology/parkinglot/carpark/Commands.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nology/parkinglot/carpark/ParkingLot.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nology/parkinglot/vehicle/Car.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nology/parkinglot/vehicle/Motorcycle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nology/parkinglot/vehicle/Van.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nology/parkinglot/vehicle/Vehicle.java" afterDir="false" />
+    <list default="true" id="f1c3f7a0-482a-4380-ac61-2db0e398e047" name="Changes" comment="added in method for parking. Need to figure out more efficient code">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/nology/parkinglot/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nology/parkinglot/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/nology/parkinglot/carpark/Commands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nology/parkinglot/carpark/Commands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/nology/parkinglot/carpark/ParkingLot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nology/parkinglot/carpark/ParkingLot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/nology/parkinglot/vehicle/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nology/parkinglot/vehicle/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/nology/parkinglot/vehicle/Motorcycle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nology/parkinglot/vehicle/Motorcycle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/nology/parkinglot/vehicle/Van.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nology/parkinglot/vehicle/Van.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +78,14 @@
       <option name="presentableId" value="Default" />
       <updated>1674481314532</updated>
     </task>
+    <task id="LOCAL-00001" summary="added in method for parking. Need to figure out more efficient code">
+      <created>1674494452020</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1674494452020</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -97,5 +98,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added in method for parking. Need to figure out more efficient code" />
+    <option name="LAST_COMMIT_MESSAGE" value="added in method for parking. Need to figure out more efficient code" />
   </component>
 </project>

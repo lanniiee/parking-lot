@@ -8,24 +8,51 @@ import java.util.List;
 public class ParkingLot {
 
 
-    private int numOfRegularSpot = 80;
-    private int numOfCompactSpot = 40;
-    private int totalNumOfParkingSpace = numOfRegularSpot + numOfCompactSpot;
-    private int numOfAvailableSpots = totalNumOfParkingSpace;
-    private boolean isFull = false;
-    private boolean isEmpty = true;
-    private int numOfSpotVanOccupied = 0;
-    private List<Vehicle> vehiclesCurrentlyParked = new ArrayList<>();
+    private static int numOfRegularSpot = 40;
+    private static int numOfCompactSpot = 20;
+    public static int totalNumOfParkingSpace = numOfRegularSpot + numOfCompactSpot;
+    private static int numOfAvailableSpots = totalNumOfParkingSpace;
+    private static boolean isFull = false;
+    private static boolean isEmpty = true;
+    private static int numOfSpotVanOccupied = 0;
+    private static int numOfSpotCarOccupied = 0;
+    private static int numOfSpotMotorcycleOccupied = 0;
 
-
-    public List<Vehicle> getVehiclesCurrentlyParked() {
-        return vehiclesCurrentlyParked;
+    public static boolean isIsFull() {
+        return isFull;
     }
 
-    public void setVehiclesCurrentlyParked(List<Vehicle> vehiclesCurrentlyParked) {
-        this.vehiclesCurrentlyParked = vehiclesCurrentlyParked;
+    public static void setIsFull(boolean isFull) {
+        ParkingLot.isFull = isFull;
     }
 
+    public static boolean isIsEmpty() {
+        return isEmpty;
+    }
+
+    public static void setIsEmpty(boolean isEmpty) {
+        ParkingLot.isEmpty = isEmpty;
+    }
+
+    public static int getNumOfSpotCarOccupied() {
+        return numOfSpotCarOccupied;
+    }
+
+    public static void setNumOfSpotCarOccupied(int numOfSpotCarOccupied) {
+        ParkingLot.numOfSpotCarOccupied = numOfSpotCarOccupied;
+    }
+
+    public static int getNumOfSpotMotorcycleOccupied() {
+        return numOfSpotMotorcycleOccupied;
+    }
+
+    public static void setNumOfSpotMotorcycleOccupied(int numOfSpotMotorcycleOccupied) {
+        ParkingLot.numOfSpotMotorcycleOccupied = numOfSpotMotorcycleOccupied;
+    }
+
+    public ParkingLot () {
+
+    }
 
 
     public int getNumOfRegularSpot() {
