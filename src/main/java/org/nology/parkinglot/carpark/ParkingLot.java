@@ -2,11 +2,11 @@ package org.nology.parkinglot.carpark;
 public class ParkingLot {
 
 
-    private int numOfRegularSpot = 40;
-    private int numOfCompactSpot = 20;
+    private int numOfRegularSpot = 10;
+    private int numOfCompactSpot = 5;
     public int totalNumOfParkingSpace = numOfRegularSpot + numOfCompactSpot;
     private int numOfAvailableSpots = totalNumOfParkingSpace;
-    private final boolean isFull = false;
+    private boolean isFull = false;
     private boolean isEmpty = true;
     private int numOfSpotVanOccupied = 0;
     private int numOfSpotCarOccupied = 0;
@@ -67,6 +67,9 @@ public class ParkingLot {
         return isFull;
     }
 
+    public void setFull(boolean full) {
+        this.isFull = full;
+    }
 
     public boolean isEmpty() {
         return isEmpty;

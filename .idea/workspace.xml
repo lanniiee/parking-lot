@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1c3f7a0-482a-4380-ac61-2db0e398e047" name="Changes" comment="added in method for parking. Need to figure out more efficient code">
+    <list default="true" id="f1c3f7a0-482a-4380-ac61-2db0e398e047" name="Changes" comment="remove leaving method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/nology/parkinglot/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nology/parkinglot/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/nology/parkinglot/carpark/Commands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nology/parkinglot/carpark/Commands.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/nology/parkinglot/carpark/ParkingLot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nology/parkinglot/carpark/ParkingLot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/nology/parkinglot/vehicle/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nology/parkinglot/vehicle/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/nology/parkinglot/vehicle/Motorcycle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nology/parkinglot/vehicle/Motorcycle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/nology/parkinglot/vehicle/Van.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nology/parkinglot/vehicle/Van.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +81,28 @@
       <option name="project" value="LOCAL" />
       <updated>1674494452020</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add more if statement to parking method. Give more options to check availability">
+      <created>1674581052427</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1674581052427</updated>
+    </task>
+    <task id="LOCAL-00003" summary="refactoring code">
+      <created>1674581612014</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1674581612014</updated>
+    </task>
+    <task id="LOCAL-00004" summary="remove leaving method">
+      <created>1674581685677</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1674581685677</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -101,6 +118,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added in method for parking. Need to figure out more efficient code" />
-    <option name="LAST_COMMIT_MESSAGE" value="added in method for parking. Need to figure out more efficient code" />
+    <MESSAGE value="add more if statement to parking method. Give more options to check availability" />
+    <MESSAGE value="refactoring code" />
+    <MESSAGE value="remove leaving method" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove leaving method" />
   </component>
 </project>

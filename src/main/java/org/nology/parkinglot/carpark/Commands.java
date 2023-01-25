@@ -98,6 +98,9 @@ public class Commands {
     }
 
     public void parkCar () {
+        if (parkingLot.getNumOfAvailableSpots() == 0) {
+            parkingLot.setFull(true);
+        }
         if (!parkingLot.isFull()) {
             Scanner scanner = new Scanner(System.in);
             for (int i = 0; i < parkingOpt.length; i++) {
@@ -128,6 +131,10 @@ public class Commands {
                     Vehicle van = new Van();
                     van.park(parkingLot);
             }
+        } else {
+            System.out.println("Car park is full. Goodbye");
+            isCheckAvailability = false;
+            running = false;
         }
 
     }
